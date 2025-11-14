@@ -1,115 +1,208 @@
-/* src/hubspot.css */
+/* ==========================================================================
+   CUSTOMIZABLE VARIABLES - Edit these for site-specific styling
+   ========================================================================== */
+
 :root {
+  /* Checkbox and Radio Button Sizing */
   --hs-checkbox-radio-size: 1.125rem;
   --hs-checkbox-radio-margin-top: 0.25rem;
-  --hs-checkbox-radio-margin-right: .5rem;
+  --hs-checkbox-radio-margin-right: 0.5rem;
+
+  /* Border Properties */
   --hs-input-border-width: 1px;
   --hs-checkbox-border-radius: 0.25rem;
-  --hs-legal-text-size: .75rem;
+
+  /* Font Sizes */
+  --hs-legal-text-size: 0.75rem;
   --hs-boolean-text-size: 0.875rem;
+
+  /* Font Weights */
   --hs-label-font-weight: 500;
   --hs-checkbox-label-font-weight: 400;
   --hs-radio-label-font-weight: 400;
+
+  /* Spacing */
   --hs-form-paragraph-margin: 1rem;
-  --hs-legal-container-margin: 2rem;
+  --hs-legal-container-margin: 1rem;
   --hs-radio-checkbox-label-margin: 0.3125rem;
+
+  /* Transitions */
   --hs-transition-timing: 150ms;
   --hs-quick-transition: 100ms;
 }
-[data-element=hubspot-show] {
+
+/* ==========================================================================
+   FORM STYLES - Use variables above for customization
+   ========================================================================== */
+
+[data-element='hubspot-show'] {
   display: none;
 }
+
+/* General text color */
 .hs-form {
   color: var(--_forms---form-label--font-color);
 }
+
+.hs-form .hs-richtext a {
+  color: var(--_forms---form-label--font-color);
+}
+
+.hs-form .hs-richtext a:hover {
+  color: var(--_forms---form-label--font-color-hover);
+}
+
+.form-columns-2 > .hs-form-field {
+  width: auto !important;
+}
+
+@media screen and (min-width: 480px) {
+  .hs-form .hs-dependent-field {
+    width: auto;
+    flex: 1;
+  }
+
+  .hs-form .hs-dependent-field .hs-form-field {
+    width: 100% !important;
+  }
+
+  .hs-form .hs-dependent-field .hs_phone {
+    margin-top: 0.5rem;
+    width: calc(200% + 0.75rem) !important;
+    margin-left: calc(-100% - 0.75rem);
+  }
+}
+
+/* All paragraph elements inside Hubspot form */
+
 .hs-form select option {
   color: var(--_semantics---text-color--text-primary);
 }
+
 .hs-form > p {
   margin-top: var(--hs-form-paragraph-margin);
   margin-bottom: var(--hs-form-paragraph-margin);
 }
+
 .hs-form ol,
 .hs-form ul {
   margin-left: 0rem !important;
   padding-left: 0rem !important;
 }
+
 .inputs-list {
   list-style-type: none !important;
 }
+
 .input-list {
   list-style-type: none !important;
   padding-left: 0rem !important;
 }
+
 .hs-form .input {
   margin-left: 0rem !important;
   margin-right: 0rem !important;
 }
+
+/* .hs-form-required {
+  display: none !important;
+} */
+
+/* Set margin right 0 for input wrapper */
 .hs-input {
   width: 100% !important;
 }
+
+/* Max width of fieldset element inside form */
 .hs-form > fieldset {
   max-width: 100% !important;
 }
+
 .hs_error_rollup {
   display: none !important;
 }
+
+/* Checkbox Labels */
 .hs-form-checkbox > label {
   font-weight: var(--hs-checkbox-label-font-weight) !important;
 }
+
+/* Field Labels */
 .hs-form-field label {
   font-weight: var(--hs-label-font-weight) !important;
+  /*color: var(--_form-styles---text--text-default) !important;*/
 }
+
+/* Error messages label margin */
 .hs-error-msgs > label {
   margin-bottom: 0px !important;
 }
+
 .legal-consent-container .hs-error-msgs label {
   color: var(--_forms---form-input--text-error) !important;
 }
+
 .legal-consent-container {
   margin-bottom: var(--hs-legal-container-margin);
 }
+
+.legal-consent-container .hs-richtext {
+  margin: calc(var(--hs-legal-container-margin) / 2) 0rem;
+}
+
 .legal-consent-container li {
   margin-bottom: 0rem;
 }
+
 .hs-form-booleancheckbox-display > span {
   margin-left: 0 !important;
 }
+
 .hs-form-booleancheckbox-display p {
+  /*color: var(--semantic--text-secondary) !important;*/
   font-size: var(--hs-boolean-text-size);
 }
+
 .hs-form-booleancheckbox-display a {
   color: var(--semantic--link--link-secondary) !important;
   text-decoration: underline;
   transition: color var(--hs-transition-timing) ease;
 }
+
 .hs-form-booleancheckbox-display span {
   margin-top: var(--hs-radio-checkbox-label-margin);
   font-weight: var(--hs-checkbox-label-font-weight);
 }
+
 .hs-form-radio-display span {
   margin-top: var(--hs-radio-checkbox-label-margin);
   font-weight: var(--hs-radio-label-font-weight);
 }
+
 .hs-form select {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ljc1IDAuODEyNjc4TDUuMzc1IDUuMTg3NUwxIDAuODEyNTg4IiBzdHJva2U9IiM3QTgxOTYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==);
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ljc1IDAuODEyNjc4TDUuMzc1IDUuMTg3NUwxIDAuODEyNTg4IiBzdHJva2U9IiM3QTgxOTYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==');
   background-position: 100% 50%;
   background-size: 0.875rem;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
+
 .legal-consent-container {
   font-size: var(--hs-legal-text-size);
 }
+
 .legal-consent-container a {
   text-decoration: underline;
   transition: color var(--hs-transition-timing) ease;
 }
+
 .legal-consent-container a:hover {
   color: var(--_form-styles---text--text-link-hover);
 }
-.hs-input[type=checkbox],
-.hs-input[type=radio] {
+
+/* Custom Checkbox and Radio*/
+.hs-input[type='checkbox'],
+.hs-input[type='radio'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -124,37 +217,43 @@
   border: var(--hs-input-border-width) solid var(--_forms---form-checkbox--border-default) !important;
   border-radius: var(--hs-checkbox-border-radius) !important;
   accent-color: var(--_forms---form-checkbox--bg-default) !important;
-  transition: background-color var(--hs-quick-transition) ease, border-color var(--hs-quick-transition) ease;
+  transition:
+    background-color var(--hs-quick-transition) ease,
+    border-color var(--hs-quick-transition) ease;
 }
-.hs-input[type=radio] {
+
+/* Radio Inputs */
+.hs-input[type='radio'] {
   border-radius: 50% !important;
   border: var(--hs-input-border-width) solid var(--_forms---form-radio--border-default) !important;
 }
-.hs-input[type=radio]:not(:checked),
-.hs-input[type=checkbox]:not(:checked) {
-  background-image:
-    linear-gradient(
-      #fdfeff,
-      #fcfdff 29%,
-      #f0f4ff);
+
+.hs-input[type='radio']:not(:checked),
+.hs-input[type='checkbox']:not(:checked) {
+  background-image: linear-gradient(#fdfeff, #fcfdff 29%, #f0f4ff);
 }
-.hs-input[type=checkbox]:hover {
+
+.hs-input[type='checkbox']:hover {
   border-color: var(--_forms---form-checkbox--border-hover) !important;
   accent-color: var(--_forms---form-checkbox--bg-active) !important;
   cursor: pointer !important;
 }
-.hs-input[type=radio]:hover {
+
+.hs-input[type='radio']:hover {
   border-color: var(--_forms---form-radio--border-hover) !important;
   accent-color: var(--_forms---form-radio--bg-active) !important;
   cursor: pointer !important;
 }
-.hs-input[type=checkbox]:checked {
+
+.hs-input[type='checkbox']:checked {
   border-color: var(--_forms---form-checkbox--border-active) !important;
   accent-color: var(--_forms---form-checkbox--bg-active) !important;
   background-color: var(--_forms---form-checkbox--bg-active) !important;
 }
-.hs-input[type=checkbox]:checked::after {
-  content: "";
+
+/* Checkbox Checkmark */
+.hs-input[type='checkbox']:checked::after {
+  content: '';
   position: absolute;
   left: 0px;
   top: 0px;
@@ -165,18 +264,22 @@
   background-repeat: no-repeat;
   background-image: url('data:image/svg+xml,%3Csvg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M5.84166 10.6635L2.99862 7.82045L1.77783 9.04124L5.84166 13.1051L14.2223 4.72445L13.0015 3.50366L5.84166 10.6635Z" fill="white"/%3E%3C/svg%3E');
 }
-.hs-input[type=radio]:checked {
+
+.hs-input[type='radio']:checked {
   border-color: var(--_forms---form-radio--border-active) !important;
   accent-color: var(--_forms---form-radio--bg-active) !important;
 }
-.hs-input[type=checkbox].error,
-.hs-input[type=radio].error,
-.hs-input[type=checkbox]:checked.error,
-.hs-input[type=radio]:checked.error {
+
+.hs-input[type='checkbox'].error,
+.hs-input[type='radio'].error,
+.hs-input[type='checkbox']:checked.error,
+.hs-input[type='radio']:checked.error {
   border: var(--hs-input-border-width) solid var(--_forms---form-general--error-dark) !important;
 }
-.hs-input[type=radio]:checked::after {
-  content: "";
+
+/* Radio dot */
+.hs-input[type='radio']:checked::after {
+  content: '';
   position: absolute;
   left: 50%;
   top: 50%;
@@ -186,4 +289,3 @@
   border-radius: 100vw;
   background-color: var(--_forms---form-radio--bg-active) !important;
 }
-/*# sourceMappingURL=home.css.map */

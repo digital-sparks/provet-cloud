@@ -1,0 +1,9 @@
+:root {
+  --plyr-color-main: var(--_semantics---background-color--bg-shade-9);
+  --plyr-font-family: inherit;
+}
+
+.plyr--video {
+  border-radius: var(--_layout---border-radius--border-radius-medium);
+  margin-bottom: 1.25rem;
+}
