@@ -3,7 +3,9 @@ import 'plyr/dist/plyr.css';
 import './plyr-styles.css';
 
 window.Webflow.push(() => {
-  const videoElements = document.querySelectorAll('.blog-content_rich-text video');
+  const videoElements = document.querySelectorAll(
+    '.blog-content_rich-text video, .layout-style-5_image-wrapper video'
+  );
 
   const players = Array.from(videoElements).map((video) => {
     return new Plyr(video, {
