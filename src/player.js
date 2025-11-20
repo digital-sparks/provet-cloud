@@ -4,7 +4,7 @@ import './plyr-styles.css';
 
 window.Webflow.push(() => {
   const videoElements = document.querySelectorAll(
-    '.blog-content_rich-text video, .layout-style-5_image-wrapper video'
+    '.blog-content_rich-text video, .layout-style-5_image-wrapper video, .layout-style-3_video-wrapper video'
   );
 
   const players = Array.from(videoElements).map((video) => {
