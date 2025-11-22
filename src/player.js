@@ -7,7 +7,9 @@ window.Webflow.push(() => {
     '.blog-content_rich-text video, .layout-style-5_image-wrapper video, .layout-style-3_video-wrapper video'
   );
 
-  const players = Array.from(videoElements).map((video) => {
+  const audioElements = document.querySelectorAll('audio');
+
+  const videoPlayers = Array.from(videoElements).map((video) => {
     return new Plyr(video, {
       controls: [
         'play-large',
@@ -20,6 +22,14 @@ window.Webflow.push(() => {
         'fullscreen',
       ],
       settings: ['quality', 'speed'],
+      autoplay: false,
+      playsinline: true,
+    });
+  });
+
+  const audioPlayers = Array.from(audioElements).map((audio) => {
+    return new Plyr(audio, {
+      controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings'],
       autoplay: false,
       playsinline: true,
     });
