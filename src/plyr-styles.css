@@ -6,4 +6,9 @@
 .plyr--video {
   border-radius: var(--_layout---border-radius--border-radius-medium);
   margin-bottom: 1.25rem;
+  height: 100%;
+}
+
+.plyr__poster {
+  background-size: cover;
 }
